@@ -15,6 +15,11 @@ export class AppComponent {
   age = "43";
   img = "https://img.freepik.com/vector-premium/diseno-logotipo-fabrica-brazo-robotico-industria-tecnologia-fabricacion-brazo-mano-robot-aplha-x-inicial_171487-1620.jpg";
   btnDisabled = true;
+  register = {
+    name: '',
+    email: '',
+    password: '',
+  }
   person = {
     name: "Cley",
     age: 43,
@@ -82,5 +87,9 @@ export class AppComponent {
   deleteName(index: number)
   {
     this.names.splice(index, 1);
+  }
+
+  onRegister() {
+    console.log(this.register);
   }
 }
