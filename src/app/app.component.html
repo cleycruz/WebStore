@@ -1,3 +1,47 @@
+<h1>Class & Style</h1>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name" title="inp6" />
+<p class="message-error" [class.invalid]="nameInput2.invalid">
+  El campo es requerido
+</p>
+<label>Nombre</label>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name" title="inp7" />
+<p [style.font-style]="nameInput3.invalid ? 'italic' :  'normal'">Texto texto texto</p>
+<div>
+  <div class="styles" >
+    <input type="text" [(ngModel)]="widthImg" title="inp8" />
+  </div>
+  <div>
+    <img [style.width.%]="widthImg" [src]="person.avatar" title="img2"/>
+  </div>
+</div>
+<hr/>
+<h1>ngSwitch</h1>
+<input type="text" required [(ngModel)]="person.name" title="inp5" />
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'Cley'">
+    La persona es Cley
+  </p>
+  <p *ngSwitchCase="'Arturo'">
+    La persona es Arturo
+  </p>
+  <p *ngSwitchCase="'Faino'">
+    La persona es Faino
+  </p>
+  <p *ngSwitchCase="'Julian'">
+    La persona es Julian
+  </p>
+  <p *ngSwitchDefault>No hace match</p>
+</div>
+<hr/>
+<h1>*ngFor Objs</h1>
+<div class="products--grid">
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image" />
+    <h2>{{ product.price }}</h2>
+    <p>{{ product.name }}</p>
+  </div>
+</div>
+<hr/>
 <h1>*ngFor</h1>
 <input type="text" required [(ngModel)]="newName" title="inp5" />
 <button (click)="addName()">Add name</button>
@@ -46,4 +90,4 @@
 <h2>{{ 'Tester delta. '.repeat(5) }}</h2>
 <p>3+3 = {{3+3}}</p>
 <p>Hola soy {{ name }} y tengo {{age}}</p>
-<img src="{{img}}" alt="image" />
+<img width="200" src="{{img}}" alt="image" />
